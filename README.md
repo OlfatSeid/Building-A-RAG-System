@@ -23,11 +23,11 @@ Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 - **llamaIndex** llamaIndex: Used for loading and reading documents from files
 
-```python
-(from llamaIndex import SimpleDirectoryReader
+```
+from llamaIndex import SimpleDirectoryReader
 
 # Load data from PDF files or directories
-documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data())
+documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()'''
 '''
 ## 2. Indexing & Storing
 ### Why Indexing?
