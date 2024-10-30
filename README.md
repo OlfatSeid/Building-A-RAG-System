@@ -1,15 +1,40 @@
-![Description of Image](E:\Llicenses &Courses\New folder.png)
-screenshot_20241030_085255.png
+
+# Retrieval-Augmented Generation (RAG) Model with LlamaIndex
+
+## Overview
+This repository provides for a Retrieval-Augmented Generation (RAG) system, which integrates retrieval-based approaches with generative models.
+The system first retrieves relevant documents or information from a knowledge base and then uses a generative model to synthesize a coherent response based on the retrieved information.
+
+## Steps Involved in RAG
+- 1.Data Ingestion
+- 2.Indexing & Storing
+- 3.Retrieval
+- 4.Response Synthesis
+- 5.Query/Chat Engine
+
+## 1. Data Ingestion
+The Data Ingestion phase involves collecting, processing, and preparing the data for storage and retrieval.
+It can handle structured and unstructured data sources such as text documents, databases, APIs, or web scraping.
+
+## 2. Indexing & Storing
+### Why Indexing?
+- Quick Retrieval: Speeding up the process of finding relevant information.
+- Enhanced Accuracy: Improves the relevance and quality of information retrieved.
+- Scalability: Allows the system to efficiently handle large data volumes.
+## 3. Retrieval
+The Retrieval component is responsible for fetching the most relevant documents based on a user query.
+This step is crucial for the RAG system since the quality of retrieved documents directly affects the generated response.
+
+  
+  
 
 
-Retrieval-Augmented Generation (RAG) Model with LlamaIndex
-This repository provides a Retrieval-Augmented Generation (RAG) pipeline using the LlamaIndex library and LLaMA language models. The RAG architecture enhances a language model's ability to answer questions by retrieving relevant information from a document store, making it particularly suitable for knowledge-intensive tasks.
 
-Overview
-Retrieval-Augmented Generation (RAG) is an architecture that combines a retriever and generator to improve the accuracy of answers to complex or specific queries. This RAG pipeline uses the LlamaIndex library as the retriever and Meta's LLaMA language model as the generator. The retriever fetches relevant context from a document corpus, and the generator uses this information to produce contextually accurate responses.
+   
 
-Installation
-Prerequisites
+
+## Installation
+## Prerequisites
 Python 3.8+
 LlamaIndex library
 Transformers library for LLaMA model integration.
