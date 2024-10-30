@@ -43,9 +43,9 @@ Supports both batch and real-time ingestion.
 - Custom Embedding Model: Define a custom embedding model using SentenceTransformer for embedding generation. 
 - llamaIndex: Utilized to create vector-based indexes for document retrieval.
   
-                from llama_index.core import VectorStoreIndex
-                ###Create a vector-based index from documents
-                index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
+                     from llama_index.core import VectorStoreIndex
+                     ###Create a vector-based index from documents
+                     index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
 ********************************************
 ## 3. Retrieval
 The Retrieval component is responsible for fetching the most relevant documents based on a user query.
@@ -53,22 +53,28 @@ This step is crucial for the RAG system since the quality of retrieved documents
 ### Features
 Supports semantic search using embeddings.
 Ranked retrieval using relevance scoring algorithms.
-Handles complex queries using Boolean logic, fuzzy matching, and more.
+### Key Tools/Technologies
+llamaIndex: Used to convert the document index into a retriever for querying.For example:
+
+                      retriever = index.as_retriever()
+                      ###Retrieve documents based on a query
+                      query = "What is self attention?"
+                      results = retriever.retrieve(query)
+
 ********************************************
 ## 4. Response Synthesis
 In the Response Synthesis phase, a generative model such as a large language model (LLM) processes the retrieved documents and generates a coherent,
 contextually relevant response.
 ### Features
-Retrieval-augmented generation that combines relevant documents with the power of generative models.
-Fine-tuned for answering domain-specific queries.
-Context-aware and supports conversational AI.
+Retrieval-augmented generation that combines relevant documents with the power of generative model.
+Combines retrieved documents to produce detailed answers.
+Supports various response formats, including conversational and structured outputs.
 ### Key Tools/Technologies
-llamaIndex: Used to convert the document index into a retriever for querying.For example:
+- *Hugging Face Transformers:* for accessing and utilizing pre-trained language models.
+- *llamaIndex:* For managing the retrieval of documents and preparing them for the response synthesis.
+*Response Synthesizer:* A function that integrates the LLM for generating responses based on the retrieved data. For example:
 
-                     retriever = index.as_retriever()
-                     ###Retrieve documents based on a query
-                     query = "What is self attention?"
-                     results = retriever.retrieve(query)
+                          response_synthesizer = get_response_synthesizer(llm=llm)
 
 *******************************************  
 ## 5. Query/Chat Engine 
