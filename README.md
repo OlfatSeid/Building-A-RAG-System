@@ -24,10 +24,9 @@ Supports both batch and real-time ingestion.
 - **llamaIndex** llamaIndex: Used for loading and reading documents from files
 
 
-           from llamaIndex import SimpleDirectoryReader
-
-           ###Load data from PDF files or directories
-           documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+              from llamaIndex import SimpleDirectoryReader
+              ###Load data from PDF files or directories
+              documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
 ********************************************
 ## 2. Indexing & Storing
 ### Why Indexing?
@@ -43,8 +42,8 @@ Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 - Custom Embedding Model: Define a custom embedding model using SentenceTransformer for embedding generation. 
 - llamaIndex: Utilized to create vector-based indexes for document retrieval.
+  
                 from llama_index.core import VectorStoreIndex
-
                 ###Create a vector-based index from documents
                 index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
 ********************************************
@@ -65,17 +64,17 @@ Fine-tuned for answering domain-specific queries.
 Context-aware and supports conversational AI.
 ### Key Tools/Technologies
 llamaIndex: Used to convert the document index into a retriever for querying.For example:
-               retriever = index.as_retriever()
 
-               ###Retrieve documents based on a query
-               query = "What is self attention?"
-               results = retriever.retrieve(query)
+                     retriever = index.as_retriever()
+                     ###Retrieve documents based on a query
+                     query = "What is self attention?"
+                     results = retriever.retrieve(query)
 
 *******************************************  
 ## 5. Query/Chat Engine 
 The Query/Chat Engine is the user-facing component that takes queries as input, retrieves relevant information,
 and returns a synthesized response. It also supports conversational interactions, maintaining context across multiple turns.
-
+*******************************************
 
 
 ## Installation
