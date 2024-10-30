@@ -1,6 +1,6 @@
 
 # Retrieval-Augmented Generation (RAG) Pipeline
-- <span style="color: green;"># Retrieval-Augmented Generation (RAG) Pipeline</span>:
+
 ## Overview
 This repository provides for a Retrieval-Augmented Generation (RAG) system, which integrates retrieval-based approaches with generative models.
 The system first retrieves relevant documents or information from a knowledge base and then uses a generative model to synthesize a coherent response based on the retrieved information.
@@ -21,7 +21,7 @@ Ingests data from multiple formats (PDFs, text files, JSON, etc.).
 Data validation and preprocessing steps to ensure quality.
 Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
-- <span style="color: blue;">llamaIndex</span>: llamaIndex: Used for loading and reading documents from files
+- **llamaIndex**: Used for loading and reading documents from files
 
 
                      from llamaIndex import SimpleDirectoryReader
@@ -54,7 +54,7 @@ This step is crucial for the RAG system since the quality of retrieved documents
 Supports semantic search using embeddings.
 Ranked retrieval using relevance scoring algorithms.
 ### Key Tools/Technologies
-- <span style="color: blue;">llamaIndex</span>: Used to convert the document index into a retriever for querying.For example:
+- **llamaIndex**: Used to convert the document index into a retriever for querying.For example:
 
                       retriever = index.as_retriever()
                       ###Retrieve documents based on a query
@@ -70,8 +70,8 @@ Retrieval-augmented generation that combines relevant documents with the power o
 Combines retrieved documents to produce detailed answers.
 Supports various response formats, including conversational and structured outputs.
 ### Key Tools/Technologies
-- <span style="color: blue;">Hugging Face Transformers</span>:for accessing and utilizing pre-trained language models.
-- <span style="color: blue;">llamaIndex</span>: For managing the retrieval of documents and preparing them for the response synthesis.
+- **Hugging Face Transformers**:for accessing and utilizing pre-trained language models.
+- **llamaIndex**: For managing the retrieval of documents and preparing them for the response synthesis.
 *Response Synthesizer:* A function that integrates the LLM for generating responses based on the retrieved data. For example:
 
                           response_synthesizer = get_response_synthesizer(llm=llm)
