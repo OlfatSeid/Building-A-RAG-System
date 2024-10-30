@@ -24,9 +24,9 @@ Supports both batch and real-time ingestion.
 - **llamaIndex** llamaIndex: Used for loading and reading documents from files
 
 
-              from llamaIndex import SimpleDirectoryReader
-              ###Load data from PDF files or directories
-              documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+                     from llamaIndex import SimpleDirectoryReader
+                     ###Load data from PDF files or directories
+                     documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
 ********************************************
 ## 2. Indexing & Storing
 ### Why Indexing?
@@ -70,8 +70,8 @@ Retrieval-augmented generation that combines relevant documents with the power o
 Combines retrieved documents to produce detailed answers.
 Supports various response formats, including conversational and structured outputs.
 ### Key Tools/Technologies
-- *Hugging Face Transformers:* for accessing and utilizing pre-trained language models.
-- *llamaIndex:* For managing the retrieval of documents and preparing them for the response synthesis.
+- **Hugging Face Transformers:** for accessing and utilizing pre-trained language models.
+- **llamaIndex:** For managing the retrieval of documents and preparing them for the response synthesis.
 *Response Synthesizer:* A function that integrates the LLM for generating responses based on the retrieved data. For example:
 
                           response_synthesizer = get_response_synthesizer(llm=llm)
