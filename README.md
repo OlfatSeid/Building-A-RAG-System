@@ -23,7 +23,7 @@ Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 llamaIndex: Used for loading and reading documents from files
 
- ```python
+```python
 (from llamaIndex import SimpleDirectoryReader
 
 # Load data from PDF files or directories
