@@ -1,6 +1,5 @@
 ![Description of Image](E:\Llicenses &Courses\New folder.png)
-
-![alt text](screenshot_20241030_085255.png)
+(screenshot_20241030_085255.png)
 
 
 Retrieval-Augmented Generation (RAG) Model with LlamaIndex
