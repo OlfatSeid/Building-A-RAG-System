@@ -24,11 +24,11 @@ Supports both batch and real-time ingestion.
 - **llamaIndex** llamaIndex: Used for loading and reading documents from files
 
 
-          from llamaIndex import SimpleDirectoryReader
+           from llamaIndex import SimpleDirectoryReader
 
-        ###Load data from PDF files or directories
-       documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
-###############################################################################
+           ###Load data from PDF files or directories
+           documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+********************************************
 ## 2. Indexing & Storing
 ### Why Indexing?
 - Quick Retrieval: Speeding up the process of finding relevant information.
@@ -47,7 +47,7 @@ Supports both batch and real-time ingestion.
 
                 ###Create a vector-based index from documents
                 index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
-
+********************************************
 ## 3. Retrieval
 The Retrieval component is responsible for fetching the most relevant documents based on a user query.
 This step is crucial for the RAG system since the quality of retrieved documents directly affects the generated response.
@@ -55,7 +55,7 @@ This step is crucial for the RAG system since the quality of retrieved documents
 Supports semantic search using embeddings.
 Ranked retrieval using relevance scoring algorithms.
 Handles complex queries using Boolean logic, fuzzy matching, and more.
-
+********************************************
 ## 4. Response Synthesis
 In the Response Synthesis phase, a generative model such as a large language model (LLM) processes the retrieved documents and generates a coherent,
 contextually relevant response.
@@ -65,13 +65,13 @@ Fine-tuned for answering domain-specific queries.
 Context-aware and supports conversational AI.
 ### Key Tools/Technologies
 llamaIndex: Used to convert the document index into a retriever for querying.For example:
-                    retriever = index.as_retriever()
+               retriever = index.as_retriever()
 
                ###Retrieve documents based on a query
-                query = "What is self attention?"
-                results = retriever.retrieve(query)
+               query = "What is self attention?"
+               results = retriever.retrieve(query)
 
-  
+*******************************************  
 ## 5. Query/Chat Engine 
 The Query/Chat Engine is the user-facing component that takes queries as input, retrieves relevant information,
 and returns a synthesized response. It also supports conversational interactions, maintaining context across multiple turns.
