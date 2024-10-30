@@ -26,7 +26,7 @@ llamaIndex: Used for loading and reading documents from files
  ```python (from llamaIndex import SimpleDirectoryReader
 
 # Load data from PDF files or directories
-documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()) ''' python
+documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()) '''python
 
 
 ## 2. Indexing & Storing
