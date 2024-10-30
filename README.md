@@ -23,12 +23,12 @@ Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 - **llamaIndex** llamaIndex: Used for loading and reading documents from files
 
-```
+
 from llamaIndex import SimpleDirectoryReader
 
-# Load data from PDF files or directories
-documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()'''
-'''
+###Load data from PDF files or directories
+documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+###############################################################################
 ## 2. Indexing & Storing
 ### Why Indexing?
 - Quick Retrieval: Speeding up the process of finding relevant information.
@@ -45,7 +45,7 @@ documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_da
 - llamaIndex: Utilized to create vector-based indexes for document retrieval.
   from llama_index.core import VectorStoreIndex
 
-# Create a vector-based index from documents
+###Create a vector-based index from documents
 index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
 
 ## 3. Retrieval
@@ -67,7 +67,7 @@ Context-aware and supports conversational AI.
 llamaIndex: Used to convert the document index into a retriever for querying.For example:
 retriever = index.as_retriever()
 
-# Retrieve documents based on a query
+###Retrieve documents based on a query
 query = "What is self attention?"
 results = retriever.retrieve(query)
 
