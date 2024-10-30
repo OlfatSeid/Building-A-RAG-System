@@ -24,10 +24,10 @@ Supports both batch and real-time ingestion.
 - **llamaIndex** llamaIndex: Used for loading and reading documents from files
 
 
-from llamaIndex import SimpleDirectoryReader
+          from llamaIndex import SimpleDirectoryReader
 
-###Load data from PDF files or directories
-documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+        ###Load data from PDF files or directories
+       documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
 ###############################################################################
 ## 2. Indexing & Storing
 ### Why Indexing?
@@ -43,10 +43,10 @@ documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_da
 ### Key Tools/Technologies
 - Custom Embedding Model: Define a custom embedding model using SentenceTransformer for embedding generation. 
 - llamaIndex: Utilized to create vector-based indexes for document retrieval.
-  from llama_index.core import VectorStoreIndex
+                from llama_index.core import VectorStoreIndex
 
-###Create a vector-based index from documents
-index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
+                ###Create a vector-based index from documents
+                index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
 
 ## 3. Retrieval
 The Retrieval component is responsible for fetching the most relevant documents based on a user query.
@@ -65,11 +65,11 @@ Fine-tuned for answering domain-specific queries.
 Context-aware and supports conversational AI.
 ### Key Tools/Technologies
 llamaIndex: Used to convert the document index into a retriever for querying.For example:
-retriever = index.as_retriever()
+                    retriever = index.as_retriever()
 
-###Retrieve documents based on a query
-query = "What is self attention?"
-results = retriever.retrieve(query)
+               ###Retrieve documents based on a query
+                query = "What is self attention?"
+                results = retriever.retrieve(query)
 
   
 ## 5. Query/Chat Engine 
