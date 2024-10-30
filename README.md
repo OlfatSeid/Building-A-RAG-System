@@ -6,11 +6,12 @@ This repository provides for a Retrieval-Augmented Generation (RAG) system, whic
 The system first retrieves relevant documents or information from a knowledge base and then uses a generative model to synthesize a coherent response based on the retrieved information.
 
 ## Steps Involved in RAG
-- 1.Data Ingestion
-- 2.Indexing & Storing
-- 3.Retrieval
-- 4.Response Synthesis
-- 5.Query/Chat Engine
+1. Data Ingestion
+2. Indexing & Storing
+3. Retrieval
+4. Response Synthesis
+5. Query/Chat Engine
+
 
 ## 1. Data Ingestion
 The Data Ingestion phase involves collecting, processing, and preparing the data for storage and retrieval.
@@ -21,7 +22,8 @@ Data validation and preprocessing steps to ensure quality.
 Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 llamaIndex: Used for loading and reading documents from files
-from llamaIndex import SimpleDirectoryReader
+
+```python from llamaIndex import SimpleDirectoryReader
 
 # Load data from PDF files or directories
 documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
