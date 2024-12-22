@@ -148,4 +148,5 @@ A Contextual RAG system retrieves relevant pieces of information from a dataset 
 ***********************************************************************************************************************************
 ***********************************************************************************************************************************
 # Parent Document Retriever
-![image](https://github.com/user-attachments/assets/cbd79c17-470e-4270-8f68-c9c255bbe48b)
+![image](https://github.com/user-attachments/assets/d1f1df77-f6fa-4fbb-ba6a-6f4fc1f3d52e)
+
