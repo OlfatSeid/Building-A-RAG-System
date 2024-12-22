@@ -91,8 +91,6 @@ Transformers library for LLaMA model integration.
 *****************************************************************************************************************************************
 ************************************************************************************************************************
 # Contextual Retrieval-Augmented Generation (RAG)
-![image](https://github.com/user-attachments/assets/ba1eb9f4-6776-4e08-b389-2df0898be263)
-
 
 ## Overview
 A Contextual RAG system retrieves relevant pieces of information from a dataset or knowledge base and uses this context to generate more informed and accurate responses. This implementation uses:
@@ -150,3 +148,18 @@ A Contextual RAG system retrieves relevant pieces of information from a dataset 
 # Parent Document Retriever
 ![image](https://github.com/user-attachments/assets/d1f1df77-f6fa-4fbb-ba6a-6f4fc1f3d52e)
 
+## How to use the Parent Document Retriever
+When splitting documents for retrieval, there are often conflicting desires:
+
+- You may want to have small documents, so that their embeddings can most accurately reflect their meaning. If too long, then the embeddings can lose meaning.
+- You want to have long enough documents that the context of each chunk is retained.
+The ParentDocumentRetriever strikes that balance by splitting and storing small chunks of data. During retrieval, it first fetches the small chunks but then looks up the parent ids for those chunks and returns those larger documents.
+
+Note that "parent document" refers to the document that a small chunk originated from. This can either be the whole raw document OR a larger chunk.
+
+          from langchain.retrievers import ParentDocumentRetriever
+          from langchain.storage import InMemoryStore
+          from langchain_chroma import Chroma
+          from langchain_text_splitters import RecursiveCharacterTextSplitter
+          
+  API Reference:InMemoryStore | TextLoader | OpenAIEmbeddings | RecursiveCharacterTextSplitter
