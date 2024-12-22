@@ -88,3 +88,56 @@ and returns a synthesized response. It also supports conversational interactions
 Python 3.8+
 LlamaIndex library
 Transformers library for LLaMA model integration.
+*****************************************************************************************************************************************
+# Contextual Retrieval-Augmented Generation (RAG)
+
+## Overview
+A Contextual RAG system retrieves relevant pieces of information from a dataset or knowledge base and uses this context to generate more informed and accurate responses. This implementation uses:
+
+- Hugging Face Transformers: open-source LLM.
+
+- LangChain: For orchestrating the RAG pipeline, including document loading, retrieval, and contextual generation.
+
+- Chroma: For efficient vector-based retrieval.
+---------------------------------------------------------
+## Features
+
+- Retrieval of context-specific documents using Chroma.
+
+- Integration with Hugging Face's free LLM for cost-effective deployment.
+
+- Easily configurable to your dataset or domain.
+ ----------------------------------------------------------------
+ ## Installation
+ - Install Dependencies:Ensure Python 3.8+ is installed.
+ - Install  chromadb
+
+              pip install chromadb
+ - Download a Free LLM from Hugging Face:
+
+              from transformers import AutoModelForCausalLM, AutoTokenizer
+              model_name = "meta-llama/Meta-Llama-3.1-8B"
+              model = AutoModelForCausalLM.from_pretrained(model_name)
+              tokenizer = AutoTokenizer.from_pretrained(model_name)
+   -----------------------------------------------------------------------
+  ## How It Works
+
+1. Document Preprocessing: The dataset is preprocessed and embedded using a sentence transformer model.
+
+2. Chroma Indexing: Document embeddings are indexed for fast similarity search.
+
+3. Retrieval: When a query is input, the system retrieves the most relevant documents.
+
+4. Contextual Generation: The retrieved context is appended to the query and passed to the LLM for generation.
+#### To use the Contextual Compression Retriever, you'll need:
+- a base retriever
+- a Document Compressor
+The Contextual Compression Retriever passes queries to the base retriever, takes the initial documents and passes them through the Document Compressor. The Document Compressor takes a list of documents and shortens it by reducing the contents of documents or dropping documents altogether.
+
+         compressor = LLMChainExtractor.from_llm(llm)
+         compression_retriever = ContextualCompressionRetriever(
+                        base_compressor=compressor, base_retriever=retriever
+         )
+         compressed_docs = compression_retriever.invoke("How do ViGGO's 'List' slots differ from other NLG datasets like E2E and Hotel?")
+         print(compressed_docs)
+***********************************************************************************************************************************
