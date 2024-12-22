@@ -144,4 +144,4 @@ A Contextual RAG system retrieves relevant pieces of information from a dataset 
          compressed_docs = compression_retriever.invoke("How do ViGGO's 'List' slots differ from other NLG datasets like E2E and Hotel?")
          print(compressed_docs)
 ***********************************************************************************************************************************
-##################################################################################################################################
+***********************************************************************************************************************************
