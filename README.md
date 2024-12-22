@@ -27,7 +27,7 @@ Supports both batch and real-time ingestion.
                      from llamaIndex import SimpleDirectoryReader
                      ###Load data from PDF files or directories
                      documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
-********************************************
+-----------------------------------------------------
 ## 2. Indexing & Storing
 ### Why Indexing?
 - Quick Retrieval: Speeding up the process of finding relevant information.
@@ -89,6 +89,7 @@ Python 3.8+
 LlamaIndex library
 Transformers library for LLaMA model integration.
 *****************************************************************************************************************************************
+************************************************************************************************************************
 # Contextual Retrieval-Augmented Generation (RAG)
 
 ## Overview
@@ -130,9 +131,11 @@ A Contextual RAG system retrieves relevant pieces of information from a dataset 
 
 4. Contextual Generation: The retrieved context is appended to the query and passed to the LLM for generation.
 #### To use the Contextual Compression Retriever, you'll need:
-- a base retriever
-- a Document Compressor
-The Contextual Compression Retriever passes queries to the base retriever, takes the initial documents and passes them through the Document Compressor. The Document Compressor takes a list of documents and shortens it by reducing the contents of documents or dropping documents altogether.
+- a base retriever.
+- a Document Compressor.
+ The Contextual Compression Retriever passes queries to the base retriever, takes the initial documents and passes them through the 
+ Document Compressor. The Document Compressor takes a list of documents and shortens it by reducing the contents of documents or 
+ dropping documents altogether.
 
          compressor = LLMChainExtractor.from_llm(llm)
          compression_retriever = ContextualCompressionRetriever(
