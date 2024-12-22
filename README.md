@@ -162,4 +162,4 @@ Note that "parent document" refers to the document that a small chunk originated
           from langchain_chroma import Chroma
           from langchain_text_splitters import RecursiveCharacterTextSplitter
           
-  API Reference:InMemoryStore | TextLoader | OpenAIEmbeddings | RecursiveCharacterTextSplitter
+  API Reference:[InMemoryStore](https://python.langchain.com/api_reference/core/stores/langchain_core.stores.InMemoryStore.html) | TextLoader | RecursiveCharacterTextSplitter
