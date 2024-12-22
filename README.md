@@ -91,6 +91,8 @@ Transformers library for LLaMA model integration.
 *****************************************************************************************************************************************
 ************************************************************************************************************************
 # Contextual Retrieval-Augmented Generation (RAG)
+![image](https://github.com/user-attachments/assets/ba1eb9f4-6776-4e08-b389-2df0898be263)
+
 
 ## Overview
 A Contextual RAG system retrieves relevant pieces of information from a dataset or knowledge base and uses this context to generate more informed and accurate responses. This implementation uses:
