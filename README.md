@@ -22,11 +22,12 @@ Data validation and preprocessing steps to ensure quality.
 Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 - **llamaIndex**: Used for loading and reading documents from files
-
+```python
 
                      from llamaIndex import SimpleDirectoryReader
                      ###Load data from PDF files or directories
-                     documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+                    documents = SimpleDirectoryReader(input_files=['data/transformers.pdf']).load_data()
+```
 -----------------------------------------------------
 ## 2. Indexing & Storing
 ### Why Indexing?
@@ -42,10 +43,11 @@ Supports both batch and real-time ingestion.
 ### Key Tools/Technologies
 - Custom Embedding Model: Define a custom embedding model using SentenceTransformer for embedding generation. 
 - llamaIndex: Utilized to create vector-based indexes for document retrieval.
-  
+  ```python
                      from llama_index.core import VectorStoreIndex
                      ###Create a vector-based index from documents
                      index = VectorStoreIndex.from_documents(documents,embed_model=embed_model)
+  ```
 ********************************************
 ## 3. Retrieval
 The Retrieval component is responsible for fetching the most relevant documents based on a user query.
@@ -55,11 +57,13 @@ Supports semantic search using embeddings.
 Ranked retrieval using relevance scoring algorithms.
 ### Key Tools/Technologies
 - **llamaIndex**: Used to convert the document index into a retriever for querying.For example:
-
+```python
                       retriever = index.as_retriever()
                       ###Retrieve documents based on a query
                       query = "What is self attention?"
                       results = retriever.retrieve(query)
+
+```
 
 ********************************************
 ## 4. Response Synthesis
@@ -115,11 +119,12 @@ A Contextual RAG system retrieves relevant pieces of information from a dataset 
 
               pip install chromadb
  - Download a Free LLM from Hugging Face:
-
+```python
               from transformers import AutoModelForCausalLM, AutoTokenizer
               model_name = "meta-llama/Meta-Llama-3.1-8B"
               model = AutoModelForCausalLM.from_pretrained(model_name)
               tokenizer = AutoTokenizer.from_pretrained(model_name)
+```
    -----------------------------------------------------------------------
   ## How It Works
 
@@ -136,13 +141,14 @@ A Contextual RAG system retrieves relevant pieces of information from a dataset 
  The Contextual Compression Retriever passes queries to the base retriever, takes the initial documents and passes them through the 
  Document Compressor. The Document Compressor takes a list of documents and shortens it by reducing the contents of documents or 
  dropping documents altogether.
-
+```python
          compressor = LLMChainExtractor.from_llm(llm)
          compression_retriever = ContextualCompressionRetriever(
                         base_compressor=compressor, base_retriever=retriever
          )
          compressed_docs = compression_retriever.invoke("How do ViGGO's 'List' slots differ from other NLG datasets like E2E and Hotel?")
          print(compressed_docs)
+```
 ***********************************************************************************************************************************
 ***********************************************************************************************************************************
 # Parent Document Retriever
