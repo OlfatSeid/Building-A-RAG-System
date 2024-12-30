@@ -156,7 +156,7 @@ When splitting documents for retrieval, there are often conflicting desires:
 The ParentDocumentRetriever strikes that balance by splitting and storing small chunks of data. During retrieval, it first fetches the small chunks but then looks up the parent ids for those chunks and returns those larger documents.
 
 Note that "parent document" refers to the document that a small chunk originated from. This can either be the whole raw document OR a larger chunk.
-```
+```python
           
           from langchain.retrievers import ParentDocumentRetriever
           from langchain.storage import InMemoryStore
