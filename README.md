@@ -77,9 +77,9 @@ Supports various response formats, including conversational and structured outpu
 - **Hugging Face Transformers**:for accessing and utilizing pre-trained language models.
 - **llamaIndex**: For managing the retrieval of documents and preparing them for the response synthesis.
 *Response Synthesizer:* A function that integrates the LLM for generating responses based on the retrieved data. For example:
-
+```python
                           response_synthesizer = get_response_synthesizer(llm=llm)
-
+```
 *******************************************  
 ## 5. Query/Chat Engine 
 The Query/Chat Engine is the user-facing component that takes queries as input, retrieves relevant information,
