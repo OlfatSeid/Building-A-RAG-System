@@ -172,5 +172,5 @@ Note that "parent document" refers to the document that a small chunk originated
 ```     
 API Reference:[InMemoryStore](https://python.langchain.com/api_reference/core/stores/langchain_core.stores.InMemoryStore.html) | [TextLoader](https://python.langchain.com/api_reference/community/document_loaders/langchain_community.document_loaders.text.TextLoader.html) | [RecursiveCharacterTextSplitter](https://python.langchain.com/api_reference/text_splitters/character/langchain_text_splitters.character.RecursiveCharacterTextSplitter.html)
 
-*****************************************************************************************************************************
-******************************************************************************************************************************
+***************************************************************************************************************
+***************************************************************************************************************
